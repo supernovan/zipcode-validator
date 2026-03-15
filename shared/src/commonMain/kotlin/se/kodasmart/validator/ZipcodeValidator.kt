@@ -1,7 +1,7 @@
-package se.codesmart.validator
+package se.kodasmart.validator
 
-import se.codesmart.models.CountryCode
-import se.codesmart.models.ZipCodeFormat
+import se.kodasmart.models.CountryCode
+import se.kodasmart.models.ZipCodeFormat
 import kotlin.js.ExperimentalJsExport
 import kotlin.js.JsExport
 

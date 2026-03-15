@@ -1,4 +1,4 @@
-package se.codesmart.validator
+package se.kodasmart.validator
 
 import kotlin.test.Test
 import kotlin.test.assertEquals

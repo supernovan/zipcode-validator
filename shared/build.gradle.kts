@@ -3,8 +3,8 @@ plugins {
     id("maven-publish")
 }
 
-group = "se.codesmart.zipcode-validator"
-version = "1.0.3"
+group = "se.kodasmart.zipcode-validator"
+version = "1.0.5"
 
 kotlin {
     jvm()
@@ -40,12 +40,12 @@ publishing {
     }
 }
 
-tasks.matching { it.name == "jsNodeProductionLibraryDistribution" }.configureEach {
-    doLast {
-        copy {
-            from(file("README_NPM.md"))
-            into(layout.buildDirectory.dir("dist/js/productionLibrary"))
-            rename { "README.md" }
-        }
-    }
+val copyNpmReadme by tasks.registering(Copy::class) {
+    from(layout.projectDirectory.file("README_NPM.md"))
+    into(rootProject.layout.buildDirectory.dir("js/packages/@supernovan/zipcode-validator"))
+    rename { "README.md" }
+}
+
+tasks.matching { it.name.endsWith("jsNodeProductionLibraryDistribution") }.configureEach {
+    finalizedBy(copyNpmReadme)
 }

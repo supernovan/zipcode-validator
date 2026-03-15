@@ -1,4 +1,4 @@
-package se.codesmart.models
+package se.kodasmart.models
 
 import kotlin.js.ExperimentalJsExport
 import kotlin.js.JsExport

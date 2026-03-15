@@ -13,7 +13,7 @@ You can validate zip codes using either a simple string for the country code
 
 ```js
 import validator from '@supernovan/zipcode-validator';
-const { ZipValidator } = validator.se.codesmart.validator;
+const { ZipValidator } = validator.se.kodasmart.validator;
 
 // Using a simple string (case-insensitive)
 const isSwedenValid = ZipValidator.isValid("123 45", "se");
