@@ -1,6 +1,6 @@
 # Zipcode Validator 🌍
 
-A robust, zero-dependency global zipcode validator for JavaScript and TypeScript.
+A robust zipcode validator for JavaScript and TypeScript.
 
 ## Installation
 
@@ -11,7 +11,7 @@ npm install @supernovan/zipcode-validator
 # Usage
 You can validate zip codes using either a simple string for the country code
 
-```js
+```ts
 import validator from '@supernovan/zipcode-validator';
 const { ZipValidator } = validator.se.kodasmart.validator;
 
