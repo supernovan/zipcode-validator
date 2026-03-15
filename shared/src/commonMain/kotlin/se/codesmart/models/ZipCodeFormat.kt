@@ -259,6 +259,8 @@ object ZipCodeFormat {
             CountryCode.ZW -> null
         }
 
+        if (pattern == null) return null
+
         return "^(?:$pattern)$"
     }
 }

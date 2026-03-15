@@ -4,16 +4,25 @@ plugins {
 }
 
 group = "se.codesmart.zipcode-validator"
-version = "1.0.0"
+version = "1.0.2"
 
 kotlin {
     jvm()
 
     js {
-        outputModuleName = "zipcode-validator"
+        outputModuleName = "@supernovan/zipcode-validator"
         browser()
         nodejs()
         binaries.library()
+
+        compilations.all {
+            packageJson {
+                customField("description", "A simple zipcode validator")
+                customField("repository", "https://github.com/supernovan/zipcode-validator")
+                customField("license", "MIT")
+                customField("author", "Supernovan")
+            }
+        }
     }
 
     sourceSets {

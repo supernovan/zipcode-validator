@@ -254,5 +254,15 @@ enum class CountryCode {
     YT,
     ZA,
     ZM,
-    ZW
+    ZW;
+
+    companion object {
+        fun fromString(string: String): CountryCode {
+            return try {
+                valueOf(string.trim().uppercase())
+            } catch (e: IllegalArgumentException) {
+                throw Exception("Unknown country: $string")
+            }
+        }
+    }
 }
