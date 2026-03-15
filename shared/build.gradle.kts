@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "se.codesmart.zipcode-validator"
-version = "1.0.2"
+version = "1.0.3"
 
 kotlin {
     jvm()
@@ -37,5 +37,15 @@ kotlin {
 publishing {
     repositories {
         mavenLocal()
+    }
+}
+
+tasks.matching { it.name == "jsNodeProductionLibraryDistribution" }.configureEach {
+    doLast {
+        copy {
+            from(file("README_NPM.md"))
+            into(layout.buildDirectory.dir("dist/js/productionLibrary"))
+            rename { "README.md" }
+        }
     }
 }
