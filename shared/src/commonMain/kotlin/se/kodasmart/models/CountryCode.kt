@@ -266,3 +266,13 @@ enum class CountryCode {
         }
     }
 }
+
+@OptIn(ExperimentalJsExport::class)
+@JsExport
+fun getCountryCodeFromString(string: String): CountryCode {
+    return try {
+        CountryCode.valueOf(string.trim().uppercase())
+    } catch (e: IllegalArgumentException) {
+        throw Exception("Unknown country: $string")
+    }
+}

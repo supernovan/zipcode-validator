@@ -10,8 +10,11 @@ import kotlin.js.JsExport
 object ZipValidator {
 
     fun isValid(zipCode: String?, countryCode: String): Boolean {
-
         val countryCode = CountryCode.fromString(countryCode)
+        return isValid(zipCode, countryCode)
+    }
+
+    fun isValid(zipCode: String?, countryCode: CountryCode): Boolean {
         val regexPattern = ZipCodeFormat.regexFromCountryCode(countryCode)
             ?: return true
 
